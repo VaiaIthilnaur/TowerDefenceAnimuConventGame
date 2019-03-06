@@ -1,0 +1,44 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+
+public class EnemyMovement : MonoBehaviour {
+    public float startSpeed = 10f;
+    [HideInInspector]
+    public float speed = 10f;
+    public float startHealth = 100;
+    private float health;
+    public int worth = 50;
+    public GameObject deathEffect;
+    [Header("Unity Staff")]
+    public Image healthBar;
+    private bool isDeath = false;
+    void Start()
+    {
+        speed = startSpeed;
+        health = startHealth;
+    }
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
+
+        healthBar.fillAmount = health / startHealth;
+
+        if (health <= 0 && !isDeath)
+        {
+            Die();
+        }
+    }
+    public void Slow(float pct)
+    {
+        speed = startSpeed * (1f - pct); 
+    }
+    void Die()
+    {
+        isDeath = true;
+        PlayerStats.Money += worth;
+        GameObject effect=(GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
+        WaveSponder.EnemiesAlive--;
+        Destroy(gameObject);
+    }
+}

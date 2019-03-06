@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+	<meta name="Simon Czartoryski" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>TowerDefence</title>
+	<link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="TemplateData/style.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <script src="TemplateData/UnityProgress.js"></script>  
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL3.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">TowerDefence</div>
+      </div>
+    </div>
+	<div class="footer">
+		<div class="lockup">
+			<div class="logo-picture"><img src="img/favicon.png" height="60" width="60"></div>
+			<div class="content-wrap">
+				<soc>
+					<a target="_blank" href="https://www.facebook.com/szymon.czartoryski"><i  class="fab fa-facebook fa-2x whitecolor" ></i></a>
+					<a target="_blank" href="https://github.com/VaiaIthilnaur"><i class="fab fa-github fa-2x whitecolor"></i></a>
+					<a target="_blank" href="https://www.linkedin.com/in/sczartoryski/"><i class="fab fa-linkedin fa-2x whitecolor"></i></a>
+					<a target="_blank" href="https://www.instagram.com/heymynameisdeath/"><i class="fab fa-instagram fa-2x whitecolor"></i></a>
+				</soc>
+				<p class="copyright">© Copyright Vaia Ithilnaur 2018</p>
+			</div>
+		</div>
+	</div>
+		
+  </body>
+</html>
